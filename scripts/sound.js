@@ -10,6 +10,6 @@ export async function initAudio() {
 
 export function playObservationTone() {
     if (audio) {
-        audio.play().catch(e => console.log("Playback failed:", e));
+        audio.play().catch(e => console.log("Audio play blocked or failed:", e));
     }
 }
