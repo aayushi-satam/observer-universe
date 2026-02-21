@@ -131,3 +131,32 @@ body { cursor: none; }
     font-size: 0.8rem;
     margin-top: 20px;
 }
+
+/* Scroll Indicator */
+.scroll-prompt {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.6;
+    animation: fadeInOut 3s infinite ease-in-out;
+}
+
+.scroll-prompt span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #000, transparent);
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.2; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(10px); }
+}
