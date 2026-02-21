@@ -3,20 +3,25 @@ import { startQuantumUniverse } from './scripts/quantum.js';
 
 const overlay = document.getElementById('enter-overlay');
 const wrapper = document.getElementById('content-wrapper');
-const universeBtn = document.getElementById('activate-universe');
 const interactionSpace = document.getElementById('interaction-space');
 
-// First Stage: Reveal Information
+// Handle first click (Overlay -> Info)
 overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
     wrapper.style.display = 'block';
-    initAudio().catch(() => console.log("Audio waiting..."));
+    // Unlock audio context
+    initAudio().catch(e => console.log("Audio ready for next step."));
 });
 
-// Second Stage: Enter the Void
-universeBtn.addEventListener('click', () => {
-    wrapper.style.display = 'none';
-    interactionSpace.style.display = 'block';
-    playObservationTone();
-    startQuantumUniverse();
+// Handle second click (Info -> Void) using a global delegator
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id === 'activate-universe') {
+        console.log("Entering the Void...");
+        wrapper.style.display = 'none';
+        interactionSpace.style.display = 'block';
+        
+        // Start visuals and sound
+        playObservationTone();
+        startQuantumUniverse();
+    }
 });
