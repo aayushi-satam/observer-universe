@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Observer Universe</title>
-  
-  <!-- Fonts (editorial look) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Observer Universe — The Reality You Create</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/typography.css">
 </head>
-<body>
-  <div class="container">
-    <section class="module objective">
-      <h1 class="headline">OBJECTIVE</h1>
-      <p class="body-text">
-        To let you experience a world where reality depends on observation. The objects, sounds, and text in this universe exist, change, or disappear based on your attention.
-      </p>
-    </section>
+<body class="section-objective" data-section="objective">
+
+  <!-- Ambient canvas background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Cursor glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- Floating particles -->
+  <div id="particles-container"></div>
+
+  <!-- Navigation dots -->
+  <nav class="section-nav">
+    <a href="index.html" class="nav-dot active" data-label="Objective"></a>
+    <a href="sections/science.html" class="nav-dot" data-label="Science"></a>
+    <a href="sections/art.html" class="nav-dot" data-label="Art"></a>
+    <a href="sections/philosophy.html" class="nav-dot" data-label="Philosophy"></a>
+    <a href="sections/technology.html" class="nav-dot" data-label="Technology"></a>
+    <a href="sections/spirituality.html" class="nav-dot" data-label="Spirituality"></a>
+    <a href="sections/reflection.html" class="nav-dot" data-label="Reflection"></a>
+  </nav>
+
+  <!-- Sound toggle -->
+  <button id="sound-toggle" aria-label="Toggle sound">
+    <span class="sound-icon">◎</span>
+    <span class="sound-label">SOUND</span>
+  </button>
+
+  <!-- Main content -->
+  <main class="section-content">
+
+    <div class="eyebrow-text observe-trigger" data-delay="0">THE OBSERVER UNIVERSE</div>
+
+    <h1 class="headline-main observe-trigger" data-delay="200">
+      <span class="line-mask"><span class="line-inner">REALITY</span></span>
+      <span class="line-mask"><em><span class="line-inner">DEPENDS</span></em></span>
+      <span class="line-mask"><span class="line-inner">ON YOU</span></span>
+    </h1>
+
+    <div class="section-label observe-trigger" data-delay="500">— OBJECTIVE —</div>
+
+    <p class="body-text observe-trigger" data-delay="700">
+      To let you experience a world where reality depends on observation. The objects, sounds, and text in this universe exist, change, or disappear based on your attention.
+    </p>
+
+    <div class="cta-row observe-trigger" data-delay="900">
+      <a href="sections/science.html" class="cta-btn">BEGIN OBSERVATION →</a>
+      <span class="cta-note">Move your cursor. Everything responds.</span>
+    </div>
+
+  </main>
+
+  <!-- Floating objects layer -->
+  <div id="objects-layer">
+    <div class="float-obj obj-circle" style="top:15%;left:8%;" data-quantum="1"></div>
+    <div class="float-obj obj-line-v" style="top:25%;right:10%;" data-quantum="1"></div>
+    <div class="float-obj obj-triangle" style="bottom:20%;left:12%;" data-quantum="1"></div>
+    <div class="float-obj obj-ring" style="top:60%;right:6%;" data-quantum="1"></div>
+    <div class="float-obj obj-dot-cluster" style="bottom:35%;right:20%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree" style="bottom:0;left:4%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree obj-tree--tall" style="bottom:0;right:6%;" data-quantum="1"></div>
   </div>
 
-  <!-- JS -->
+  <!-- Section footer -->
+  <footer class="section-footer">
+    <span class="footer-index">01 / 07</span>
+    <span class="footer-title">OBJECTIVE</span>
+    <span class="footer-next"><a href="sections/science.html">SCIENCE ›</a></span>
+  </footer>
+
+  <script src="scripts/main.js"></script>
   <script src="scripts/objects.js"></script>
   <script src="scripts/typography.js"></script>
   <script src="scripts/sound.js"></script>
-  <script src="scripts/main.js"></script>
+  <script>
+    initObserverUniverse({ section: 'objective', index: 1 });
+  </script>
 </body>
 </html>
