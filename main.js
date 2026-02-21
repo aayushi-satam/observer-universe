@@ -3,28 +3,33 @@ import { startQuantumUniverse } from './scripts/quantum.js';
 
 const overlay = document.getElementById('enter-overlay');
 const wrapper = document.getElementById('content-wrapper');
+const universeButton = document.getElementById('activate-universe');
+const interactionSpace = document.getElementById('interaction-space');
 
-// 1. First Click: Unlock Audio Context + Show Info
+// Step 1: Initialize Audio and Reveal Information
 overlay.addEventListener('click', () => {
     overlay.style.opacity = '0';
     wrapper.style.display = 'block';
     
-    // This "warms up" the audio engine so it's ready later
-    initAudio(); 
+    // Warm up the AudioContext (Standard Browser Requirement)
+    initAudio().catch(err => console.log("Audio waiting for user interaction."));
     
-    setTimeout(() => { 
-        overlay.style.display = 'none'; 
+    setTimeout(() => {
+        overlay.style.display = 'none';
     }, 1000);
 });
 
-// 2. Second Click: Start the actual Music and Universe
-document.addEventListener('click', (e) => {
-    if (e.target && e.target.id === 'activate-universe') {
-        document.getElementById('content-wrapper').style.display = 'none';
-        document.getElementById('interaction-space').style.display = 'block';
-        
-        // Ensure sound actually plays now
-        playObservationTone(); 
-        startQuantumUniverse();
-    }
+// Step 2: Enter the Quantum Jungle
+universeButton.addEventListener('click', () => {
+    // Hide the info page
+    wrapper.style.display = 'none';
+    
+    // Reveal and Start the Jungle
+    interactionSpace.style.display = 'block';
+    
+    // Trigger the vibrant visuals and the music
+    playObservationTone();
+    startQuantumUniverse();
+    
+    console.log("Observer has entered the Quantum Jungle.");
 });
