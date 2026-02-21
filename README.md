@@ -1,6 +1,6 @@
 # Observer Universe
 
-**→ Experience it here**
+**→ Experience it here**  
 https://aayushi-satam.github.io/observer-universe/
 
 ---
@@ -9,7 +9,7 @@ https://aayushi-satam.github.io/observer-universe/
 
 Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
 
-Inspired by principles from quantum mechanics, the system behaves probabilistically. Objects exist in unstable states until measured. When attention stabilizes them, they collapse into form. When ignored, they dissolve.
+Inspired by principles from quantum mechanics, the system behaves probabilistically. Visual elements exist in unstable states until approached. Proximity increases definition. Distance returns them to uncertainty.
 
 The work sits at the intersection of:
 
@@ -21,33 +21,51 @@ Spirituality
 
 ---
 
-## Experience
+## Interaction Model
 
-The project begins with a conceptual introduction, followed by instructions for interaction, and then transitions into a responsive environment.
+The experience unfolds in three stages:
+1. Concept introduction  
+2. User initiation  
+3. Interactive environment  
 
-Inside the interactive space:
+Inside the environment:
 
-• Movement introduces instability  
-• Sustained stillness triggers state collapse  
-• Stabilized structures accumulate  
-• Continued motion returns elements to uncertainty  
+• Cursor proximity stabilizes forms  
+• Clicks generate energy bursts  
+• Geometry rotates and shifts in depth  
+• Particles disperse and decay  
+• Sound responds to interaction intensity  
+• Continuous ambient tone evolves dynamically  
 
-Each session develops differently depending on user behavior.
+Every session differs based on movement and timing.
 
 ---
 
-## Technical Structure
+## System Design
 
-Built using:
+The universe includes:
+
+• Multi-layered geometric structures  
+• Reactive particle systems  
+• Bloom-style glow effects  
+• Ambient + reactive Web Audio  
+• Custom interactive cursor  
+• Depth simulation through motion scaling  
+
+All visuals and sound are generated in real time.
+
+---
+
+## Technical Stack
 
 HTML  
 CSS  
-JavaScript (Canvas API)
+JavaScript (Canvas API + Web Audio API)
 
-The system uses generative logic and real-time interaction to simulate probabilistic behavior.
+No external frameworks.
 
 ---
 
 ## Goal
 
-To create a web-based system where attention directly influences visual and structural outcomes, allowing users to experience observation as an active force.
+To create a responsive system where attention acts as an active force, allowing users to experience interaction as structural influence rather than passive viewing.
