@@ -195,3 +195,16 @@ body { cursor: none; }
     font-size: 0.5rem;
     letter-spacing: 2px;
 }
+
+/* Prevent scrolling until active */
+body {
+    overflow-x: hidden;
+}
+
+#enter-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: #fff;
+    z-index: 99999; /* Stay on very top */
+}
