@@ -10,22 +10,27 @@ body, html {
 }
 
 .module {
-  width: 100vw;
+  width: 90vw;             /* reduce width so it doesn’t touch edges */
+  max-width: 1200px;       /* optional: limit maximum width on big screens */
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0 auto;          /* center horizontally */
+  padding: 2rem;           /* add breathing space around content */
+  box-sizing: border-box;  /* ensures padding is included in width */
 }
 
 .headline {
   font-size: 5vw;
   font-weight: bold;
+  margin-bottom: 1rem;     /* spacing below headline */
 }
 
 .body-text {
   font-size: 2vw;
-  max-width: 60%;
+  max-width: 100%;          /* fits inside module width */
   line-height: 1.5;
 }
