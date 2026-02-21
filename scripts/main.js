@@ -1,41 +1,31 @@
-// ---------- SMOOTH CURSOR ----------
-const cursor = document.getElementById("cursor");
+const cursor = document.createElement("div");
+cursor.className = "cursor";
+document.body.appendChild(cursor);
 
-let x = window.innerWidth / 2;
-let y = window.innerHeight / 2;
-let targetX = x;
-let targetY = y;
+let x = window.innerWidth/2;
+let y = window.innerHeight/2;
+let tx = x;
+let ty = y;
 
-document.addEventListener("mousemove", (e) => {
-  targetX = e.clientX;
-  targetY = e.clientY;
+document.addEventListener("mousemove", e=>{
+  tx = e.clientX;
+  ty = e.clientY;
 });
 
-function animateCursor() {
-  x += (targetX - x) * 0.15;
-  y += (targetY - y) * 0.15;
-
-  if (cursor) {
-    cursor.style.left = x + "px";
-    cursor.style.top = y + "px";
-  }
-
-  requestAnimationFrame(animateCursor);
+function animate(){
+  x += (tx-x)*0.15;
+  y += (ty-y)*0.15;
+  cursor.style.left = x+"px";
+  cursor.style.top = y+"px";
+  requestAnimationFrame(animate);
 }
+animate();
 
-animateCursor();
-
-document.addEventListener("click", () => {
-  if (!cursor) return;
+document.addEventListener("click", ()=>{
   cursor.classList.add("click");
-  setTimeout(() => cursor.classList.remove("click"), 150);
+  setTimeout(()=>cursor.classList.remove("click"),150);
 });
 
-// ---------- BUTTON NAVIGATION ----------
-const beginBtn = document.getElementById("begin");
-
-if (beginBtn) {
-  beginBtn.addEventListener("click", () => {
-    window.location.href = "./universe.html";
-  });
-}
+document.getElementById("begin").onclick = ()=>{
+  window.location.href="./universe.html";
+};
