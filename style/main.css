@@ -1,40 +1,58 @@
-/* Global styles */
-body, html {
+/* Global reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   width: 100%;
   height: 100%;
+  font-family: 'Lato', sans-serif;
   background-color: #2E2E2E;
   color: #FFD700;
-  font-family: 'Lato', sans-serif;
   overflow: hidden;
 }
 
-/* Each section/module */
-.module {
-  width: 90vw !important;           /* content width */
-  max-width: 1200px !important;     /* limit very wide screens */
-  height: 100vh;
+/* Full-screen container */
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-  margin: 0 auto !important;        /* center horizontally */
-  padding: 2rem !important;         /* breathing space */
-  box-sizing: border-box !important;
+  padding: 3rem;
 }
 
-/* Headlines */
+/* Each module/section */
+.module {
+  max-width: 900px;
+}
+
+/* Headline */
 .headline {
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 6vw;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Body text */
 .body-text {
   font-size: 2vw;
-  max-width: 100%;
-  line-height: 1.5;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .headline {
+    font-size: 10vw;
+  }
+  .body-text {
+    font-size: 3vw;
+  }
 }
