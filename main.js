@@ -47,3 +47,15 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('mouseup', () => {
     cursor.classList.remove('cursor-pulse');
 });
+
+const exitBtn = document.getElementById('exit-void');
+
+// Show exit button when entering the void
+document.getElementById('enter-void').addEventListener('click', () => {
+    exitBtn.style.display = 'block';
+});
+
+// Reset the universe when clicking exit
+exitBtn.addEventListener('click', () => {
+    location.reload(); // The simplest way to "reset" the quantum state
+});
