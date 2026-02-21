@@ -1,68 +1,30 @@
 # Observer Universe
 
-**→ Experience it here** https://aayushi-satam.github.io/observer-universe/
+**→ Experience the Reality Shift:** https://aayushi-satam.github.io/observer-universe/
 
 ---
 
-## Concept
+## The Journey
 
-Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
+1. **The Prologue:** A silent, minimalist exploration of the five pillars: Science, Philosophy, Art, Technology, and Spirituality.
+2. **The Transition:** A moment of choice—deciding to enter the quantum void.
+3. **The Quantum Jungle:** A hyper-vibrant, reactive environment where observation (mouse movement) physically alters the geometry and connectivity of the universe.
 
-Inspired by principles from quantum mechanics, the system behaves probabilistically. Visual elements exist in unstable states until approached. Proximity increases definition. Distance returns them to uncertainty.
+---
 
-The work sits at the intersection of:
+## Core Principles
 
-Science  
-Philosophy  
-Art  
-Technology  
-Spirituality  
+* **Science:** Inspired by the Copenhagen Interpretation—reality is probabilistic until measured.
+* **Philosophy:** Addresses the 'Tree in the Forest' paradox through direct interaction.
+* **Art:** Uses generative canvas systems to visualize the invisible.
+* **Technology:** Built with vanilla JS, Canvas API, and Web Audio API for real-time reactivity.
+* **Spirituality:** Explores the collapse of the boundary between the observer and the observed.
 
 ---
 
 ## Interaction Model
 
-The experience unfolds in three stages:
-1. Cinematic Initiation (Splash Screen)  
-2. User Observation (The Scroll)  
-3. Interactive Environment (The Canvas)  
-
-Inside the environment:
-
-• **Cursor Proximity:** Stabilizes and scales floating geometries  
-• **Focus Glow:** Objects radiate light when under the lens of the observer  
-• **Kinetic Typography:** Headlines tilt and track based on mouse perspective  
-• **Reactive Sound:** DeeperMeaning.mp3 responds to interaction intensity  
-• **Film Texture:** A vintage grainy overlay provides tactile quality  
-• **Energy Bursts:** Clicks generate radial dispersion of matter  
-
----
-
-## System Design
-
-The universe includes:
-
-• Multi-layered geometric structures  
-• Reactive particle systems (Canvas API)  
-• Bloom-style glow and depth simulation  
-• Ambient + reactive Web Audio engine  
-• Custom interactive 'Lens' cursor  
-• High-contrast 'Vogue' inspired editorial layout  
-
-All visuals and sound are generated in real time.
-
----
-
-## Technical Stack
-
-HTML  
-CSS  
-JavaScript (Canvas API + Web Audio API)  
-
-No external frameworks.
-
----
-
-## Goal
-
-To create a responsive system where attention acts as an active force, allowing users to experience interaction as structural influence rather than passive viewing.
+* **Proximity:** Objects scale and brighten as the cursor approaches.
+* **Entanglement:** Particles form neural-like connections only when 'observed' by the mouse.
+* **Sonic Bloom:** Atmospheric audio swells upon entering the interaction space.
+* **Motion Trails:** Visual persistence representing the 'memory' of past observations.
