@@ -1,23 +1,24 @@
-// Smooth cursor only — NO AUDIO HERE
-
+// ---------- SMOOTH CURSOR ----------
 const cursor = document.getElementById("cursor");
 
 let x = window.innerWidth / 2;
 let y = window.innerHeight / 2;
-let tx = x;
-let ty = y;
+let targetX = x;
+let targetY = y;
 
-document.addEventListener("mousemove", e => {
-  tx = e.clientX;
-  ty = e.clientY;
+document.addEventListener("mousemove", (e) => {
+  targetX = e.clientX;
+  targetY = e.clientY;
 });
 
 function animateCursor() {
-  x += (tx - x) * 0.15;
-  y += (ty - y) * 0.15;
+  x += (targetX - x) * 0.15;
+  y += (targetY - y) * 0.15;
 
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
+  if (cursor) {
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+  }
 
   requestAnimationFrame(animateCursor);
 }
@@ -25,14 +26,16 @@ function animateCursor() {
 animateCursor();
 
 document.addEventListener("click", () => {
+  if (!cursor) return;
   cursor.classList.add("click");
   setTimeout(() => cursor.classList.remove("click"), 150);
 });
 
-const btn = document.getElementById("begin");
+// ---------- BUTTON NAVIGATION ----------
+const beginBtn = document.getElementById("begin");
 
-if (btn) {
-  btn.addEventListener("click", () => {
+if (beginBtn) {
+  beginBtn.addEventListener("click", () => {
     window.location.href = "./universe.html";
   });
 }
