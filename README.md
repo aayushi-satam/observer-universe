@@ -1,16 +1,15 @@
 # Observer Universe
 
-**Experience:** https://aayushi-satam.github.io/observer-universe/
+**Experience:** [aayushi-satam.github.io/observer-universe/](https://aayushi-satam.github.io/observer-universe/)
 
-**Project Scope**
-An interactive site demonstrating how observation changes an environment across Science, Philosophy, Art, Technology, and Spirituality.
+**Project Scope:** An interactive installation exploring how observation alters reality across Science, Philosophy, Art, Technology, and Spirituality.
 
-**Functionality**
-* **Landing:** User initiates the session.
-* **Information:** Five-pillar breakdown of the project's logic.
-* **The Void:** Reactive canvas where cursor movement triggers visuals and audio.
+**Functionality:**
+* **Initiation:** User-triggered entry to synchronize audio and visuals.
+* **The Void:** A reactive canvas where the ambient soundscape and particle materialization activate simultaneously upon entry.
+* **The Five Pillars:** Integrated conceptual logic governing real-time "Wave-Particle" state changes.
 
-**Stack**
-* HTML5, CSS3, JavaScript.
-* Canvas API for visuals.
-* Web Audio API for sound.
+**Stack:**
+* **Frontend:** HTML5, CSS3, JavaScript.
+* **Visuals:** Canvas API for dynamic particle physics.
+* **Audio:** HTML5 Audio for immersive looping soundscapes.
