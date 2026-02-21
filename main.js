@@ -25,3 +25,16 @@ document.addEventListener('click', (e) => {
         startQuantumUniverse();
     }
 });
+
+// Cursor Movement Logic
+const cursor = document.getElementById('custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Show cursor only in the void
+universeBtn.addEventListener('click', () => {
+    cursor.style.display = 'block';
+});
