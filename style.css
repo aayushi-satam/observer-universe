@@ -1,111 +1,13 @@
-:root {
-    --bg: #ffffff;
-    --text: #000000;
-}
+/* Base Reset */
 body, html {
-    margin: 0; padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Montserrat', sans-serif;
-}
-#universe-canvas {
-    position: fixed;
-    top: 0; left: 0;
-    z-index: -1;
-}
-.module {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10%;
-    opacity: 0.02;
-    transition: opacity 2s ease, transform 2s ease;
-    transform: scale(0.95);
-}
-.module.observed {
-    opacity: 1;
-    transform: scale(1);
-}
-.vogue-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 10vw, 8rem);
-    text-transform: uppercase;
     margin: 0;
-    letter-spacing: -2px;
-    line-height: 0.9;
-    transition: transform 0.1s ease-out;
-}
-.body-text {
-    max-width: 500px;
-    font-size: 0.85rem;
-    line-height: 2.2;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 3rem;
-    font-weight: 300;
+    padding: 0;
+    width: 100%;
+    background: #fff;
+    font-family: 'Playfair Display', serif;
 }
 
-/* Custom Cursor Styles */
-body { cursor: none; }
-#custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #000;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease-out;
-    mix-blend-mode: difference;
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-    .vogue-title {
-        font-size: 4rem;
-        letter-spacing: -1px;
-    }
-    .body-text {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
-        margin-top: 1.5rem;
-    }
-    .module {
-        padding: 0 5%;
-    }
-    #custom-cursor {
-        display: none; /* Hide custom cursor on touch devices */
-    }
-    body {
-        cursor: auto;
-    }
-}
-
-/* Grainy Film Texture */
-.grain {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.04;
-    pointer-events: none;
-    z-index: 10000;
-    animation: grain 8s steps(10) infinite;
-}
-
-@keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    30% { transform: translate(3%, -15%); }
-    50% { transform: translate(12%, 9%); }
-    70% { transform: translate(9%, 4%); }
-    90% { transform: translate(-1%, 7%); }
-}
-
-/* Entry Overlay */
+/* Splash Screen */
 #enter-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -115,96 +17,51 @@ body { cursor: none; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 20000;
+    z-index: 9999;
     cursor: pointer;
-    transition: opacity 1.5s ease;
-}
-#enter-overlay h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    letter-spacing: 15px;
-    margin: 0;
-}
-#enter-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 5px;
-    font-size: 0.8rem;
-    margin-top: 20px;
+    transition: opacity 1s ease;
 }
 
-/* Scroll Indicator */
-.scroll-prompt {
-    position: absolute;
-    bottom: 50px;
+/* Info Content - Ensure scrolling works here */
+#content-wrapper {
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.module {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 15px;
-    opacity: 0.6;
-    animation: fadeInOut 3s infinite ease-in-out;
+    padding: 100px 20px;
+    text-align: center;
 }
 
-.scroll-prompt span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 4px;
+/* Button Styling */
+#activate-universe {
+    padding: 20px 40px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    border: none;
+    z-index: 100;
 }
 
-.scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, #000, transparent);
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0.2; transform: translateY(0); }
-    50% { opacity: 0.8; transform: translateY(10px); }
-}
-
-/* Quantum Interaction Space */
+/* Quantum Space */
 #interaction-space {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background: #000;
-    z-index: 30000;
-    cursor: crosshair;
+    z-index: 10000;
+    display: none;
 }
 
-#activate-universe {
-    background: none;
-    border: 1px solid #000;
-    padding: 20px 40px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 5px;
-    cursor: pointer;
-    transition: all 0.5s;
-}
-
-#activate-universe:hover {
-    background: #000;
-    color: #fff;
-    box-shadow: 0 0 30px #ff00ff, 0 0 60px #00ffff;
-}
-
-.hud {
-    position: absolute;
-    top: 20px; left: 20px;
-    color: #fff;
-    font-family: 'Montserrat';
-    font-size: 0.5rem;
-    letter-spacing: 2px;
-}
-
-/* Prevent scrolling until active */
-body {
-    overflow-x: hidden;
-}
-
-#enter-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: #fff;
-    z-index: 99999; /* Stay on very top */
+#quantum-canvas {
+    width: 100%;
+    height: 100%;
 }

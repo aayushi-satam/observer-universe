@@ -2,26 +2,24 @@ import { initAudio } from './scripts/sound.js';
 import { startQuantumUniverse } from './scripts/quantum.js';
 
 const overlay = document.getElementById('enter-overlay');
-const contentWrapper = document.getElementById('content-wrapper');
+const wrapper = document.getElementById('content-wrapper');
 
+// 1. Initial Entry
 overlay.addEventListener('click', () => {
-    // 1. Fade out the splash
     overlay.style.opacity = '0';
-    
-    // 2. Show the scrolling content
-    contentWrapper.style.display = 'block';
-    
-    // 3. Start the audio and remove splash from view
+    wrapper.style.display = 'block'; // Reveal info page
     setTimeout(() => {
         overlay.style.display = 'none';
         initAudio();
-    }, 1500);
+    }, 1000);
 }, { once: true });
 
-// Logic for the final Quantum Void Button
+// 2. Activate Quantum Void Button
 document.addEventListener('click', (e) => {
-    if(e.target && e.target.id === 'activate-universe'){
-        document.getElementById('interaction-space').style.display = 'block';
+    if (e.target && e.target.id === 'activate-universe') {
+        const space = document.getElementById('interaction-space');
+        space.style.display = 'block';
         startQuantumUniverse();
+        console.log("Quantum Void Activated");
     }
 });
