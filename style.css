@@ -45,3 +45,17 @@ body, html {
     margin-top: 3rem;
     font-weight: 300;
 }
+
+/* Custom Cursor Styles */
+body { cursor: none; }
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+    mix-blend-mode: difference;
+}

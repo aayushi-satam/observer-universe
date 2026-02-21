@@ -58,3 +58,29 @@ handleTypography();
 window.addEventListener('mousedown', (e) => {
     objects.forEach(obj => obj.explode(e.clientX, e.clientY));
 });
+
+// 6. Vogue Cursor Logic
+const cursor = document.getElementById('custom-cursor');
+let cursorX = 0, cursorY = 0;
+let ringX = 0, ringY = 0;
+
+window.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+});
+
+function animateCursor() {
+    // Smooth easing for the "trailing" effect
+    ringX += (cursorX - ringX) * 0.15;
+    ringY += (cursorY - ringY) * 0.15;
+    
+    cursor.style.left = `${ringX - 10}px`;
+    cursor.style.top = `${ringY - 10}px`;
+    
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Scale cursor on click
+window.addEventListener('mousedown', () => cursor.style.transform = 'scale(2.5)');
+window.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
