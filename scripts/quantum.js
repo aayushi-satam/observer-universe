@@ -7,51 +7,63 @@ export function startQuantumUniverse() {
     let particles = [];
     const colors = ['#FF007F', '#7101FF', '#00F0FF', '#00FF8E', '#FFCC00', '#FF3E00'];
 
-    class Shape {
+    class Particle {
         constructor() {
-            this.reset();
-        }
-        reset() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 5 + 2;
+            this.baseSize = Math.random() * 8 + 2;
+            this.size = this.baseSize;
             this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.speedX = (Math.random() - 0.5) * 2;
-            this.speedY = (Math.random() - 0.5) * 2;
+            this.velocity = { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 };
         }
-        update(mx, my) {
-            let dx = mx - this.x;
-            let dy = my - this.y;
-            let dist = Math.sqrt(dx*dx + dy*dy);
-            
-            if (dist < 150) {
-                this.x -= dx * 0.05;
-                this.y -= dy * 0.05;
-                this.size = 15; // Grows when observed
-            } else {
-                this.size = Math.max(this.size - 0.1, 3);
-            }
-            
-            this.x += this.speedX;
-            this.y += this.speedY;
-        }
+
         draw() {
-            ctx.shadowBlur = 15;
-            ctx.shadowColor = this.color;
-            ctx.fillStyle = this.color;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = this.size * 2;
+            ctx.shadowColor = this.color;
             ctx.fill();
+        }
+
+        update(mouse) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+                // Reaction: Grow and shift color when observed
+                this.size = Math.min(this.size + 2, 40);
+                this.x -= dx * 0.02;
+                this.y -= dy * 0.02;
+            } else {
+                // Return to uncertainty when not observed
+                if (this.size > this.baseSize) this.size -= 0.5;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+            }
+
+            // Boundary check
+            if (this.x < 0 || this.x > canvas.width) this.velocity.x *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.velocity.y *= -1;
+
+            this.draw();
         }
     }
 
-    for(let i=0; i<150; i++) particles.push(new Shape());
+    for (let i = 0; i < 100; i++) particles.push(new Particle());
 
-    function animate(mx, my) {
-        ctx.fillStyle = 'rgba(0,0,0,0.1)'; // Trails effect
-        ctx.fillRect(0,0,canvas.width, canvas.height);
-        particles.forEach(p => { p.update(mx, my); p.draw(); });
+    const mouse = { x: -100, y: -100 };
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    function animate() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Trail effect
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => p.update(mouse));
+        requestAnimationFrame(animate);
     }
-    
-    window.addEventListener('mousemove', (e) => animate(e.clientX, e.clientY));
+    animate();
 }
