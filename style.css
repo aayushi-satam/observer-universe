@@ -7,7 +7,6 @@ body, html {
     background: var(--bg);
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
 }
 #universe-canvas {
     position: fixed;
@@ -20,28 +19,29 @@ body, html {
     flex-direction: column;
     justify-content: center;
     padding: 0 10%;
-    opacity: 0.05;
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    transform: translateY(30px);
+    opacity: 0.02;
+    transition: opacity 2s ease, transform 2s ease;
+    transform: scale(0.95);
 }
 .module.observed {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
 }
 .vogue-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 12vw, 10rem);
+    font-size: clamp(3rem, 10vw, 8rem);
     text-transform: uppercase;
     margin: 0;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
     line-height: 0.9;
+    transition: transform 0.1s ease-out;
 }
 .body-text {
     max-width: 500px;
-    font-size: 0.9rem;
-    line-height: 2;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    line-height: 2.2;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     font-weight: 300;
 }
