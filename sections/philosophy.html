@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Philosophy — Observer Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/typography.css">
+</head>
+<body class="section-philosophy" data-section="philosophy">
+
+  <canvas id="bg-canvas"></canvas>
+  <div id="cursor-glow"></div>
+  <div id="particles-container"></div>
+
+  <nav class="section-nav">
+    <a href="../index.html" class="nav-dot" data-label="Objective"></a>
+    <a href="science.html" class="nav-dot" data-label="Science"></a>
+    <a href="art.html" class="nav-dot" data-label="Art"></a>
+    <a href="philosophy.html" class="nav-dot active" data-label="Philosophy"></a>
+    <a href="technology.html" class="nav-dot" data-label="Technology"></a>
+    <a href="spirituality.html" class="nav-dot" data-label="Spirituality"></a>
+    <a href="reflection.html" class="nav-dot" data-label="Reflection"></a>
+  </nav>
+
+  <button id="sound-toggle" aria-label="Toggle sound">
+    <span class="sound-icon">◎</span>
+    <span class="sound-label">SOUND</span>
+  </button>
+
+  <main class="section-content">
+
+    <div class="eyebrow-text observe-trigger" data-delay="0">EXISTENCE & PERCEPTION</div>
+
+    <h1 class="headline-section observe-trigger" data-delay="200">
+      <span class="line-mask"><span class="line-inner">DOES IT</span></span>
+      <span class="line-mask"><em><span class="line-inner">EXIST</span></em></span>
+      <span class="line-mask"><span class="line-inner accent-word">IF UNSEEN?</span></span>
+    </h1>
+
+    <div class="section-label observe-trigger" data-delay="450">— PHILOSOPHY —</div>
+
+    <p class="body-text observe-trigger" data-delay="600">
+      The experience raises questions about reality. Does something exist if it is not seen? Your interaction shapes what is real in this universe.
+    </p>
+
+    <div class="pull-quote observe-trigger" data-delay="900">
+      "Your interaction shapes what is real."
+    </div>
+
+    <div class="cta-row observe-trigger" data-delay="1100">
+      <a href="technology.html" class="cta-btn">NEXT: TECHNOLOGY →</a>
+    </div>
+
+  </main>
+
+  <div id="objects-layer">
+    <!-- Philosophy: eye / perception symbols -->
+    <div class="float-obj" style="top:20%;left:5%;" data-quantum="1">
+      <svg width="120" height="60" viewBox="0 0 120 60" fill="none">
+        <path d="M10,30 Q60,-20 110,30 Q60,80 10,30" stroke="rgba(142,200,110,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="60" cy="30" r="12" stroke="rgba(142,200,110,0.5)" stroke-width="1" fill="none"/>
+        <circle cx="60" cy="30" r="5" fill="rgba(142,200,110,0.4)"/>
+      </svg>
+    </div>
+
+    <div class="float-obj obj-ring" style="top:35%;right:6%;" data-quantum="1"></div>
+    <div class="float-obj obj-circle" style="bottom:30%;left:7%;" data-quantum="1"></div>
+
+    <div class="float-obj" style="bottom:25%;right:8%;" data-quantum="1">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="35" stroke="rgba(142,200,110,0.2)" stroke-width="1" stroke-dasharray="4 8"/>
+        <circle cx="40" cy="40" r="20" stroke="rgba(142,200,110,0.3)" stroke-width="1"/>
+        <circle cx="40" cy="40" r="5" fill="rgba(142,200,110,0.5)"/>
+      </svg>
+    </div>
+
+    <div class="float-obj obj-line-v" style="top:8%;right:20%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree obj-tree--tall" style="bottom:0;left:4%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree" style="bottom:0;right:6%;" data-quantum="1"></div>
+  </div>
+
+  <footer class="section-footer">
+    <span class="footer-index">04 / 07</span>
+    <span class="footer-title">PHILOSOPHY</span>
+    <span class="footer-next"><a href="technology.html">TECHNOLOGY ›</a></span>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/objects.js"></script>
+  <script src="../scripts/typography.js"></script>
+  <script src="../scripts/sound.js"></script>
+  <script>
+    initObserverUniverse({ section: 'philosophy', index: 4 });
+  </script>
+</body>
+</html>
