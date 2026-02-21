@@ -5,12 +5,11 @@ export function startQuantumUniverse() {
     canvas.height = window.innerHeight;
 
     let particles = [];
-    const mouse = { x: -100, y: -100 };
+    const mouse = { x: -100, y: -100, down: false };
 
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('mousedown', () => mouse.down = true);
+    window.addEventListener('mouseup', () => mouse.down = false);
 
     class QuantumObject {
         constructor() {
@@ -26,14 +25,18 @@ export function startQuantumUniverse() {
             const dy = mouse.y - this.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            // The Collapse: Objects within 150px "exist" solidly
             if (distance < 150) {
                 this.isObserved = true;
-                this.x += dx * 0.01; // Tension: Object is drawn to the observer
-                this.y += dy * 0.01;
+                if (mouse.down) {
+                    this.x -= dx * 0.05; // Repel on click
+                    this.y -= dy * 0.05;
+                } else {
+                    this.x += dx * 0.01; // Attract on hover
+                    this.y += dy * 0.01;
+                }
             } else {
                 this.isObserved = false;
-                this.x += Math.sin(this.angle) * 0.5; // Drift when unobserved
+                this.x += Math.sin(this.angle) * 0.5;
                 this.y += Math.cos(this.angle) * 0.5;
                 this.angle += 0.01;
             }
@@ -42,13 +45,11 @@ export function startQuantumUniverse() {
         draw() {
             ctx.beginPath();
             if (this.isObserved) {
-                // Particle State: Solid, bright, defined
                 ctx.arc(this.x, this.y, this.baseSize, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-                ctx.shadowBlur = 20;
+                ctx.fillStyle = mouse.down ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowBlur = mouse.down ? 40 : 20;
                 ctx.shadowColor = '#fff';
             } else {
-                // Wave State: Blurred, dim, uncertain
                 ctx.rect(this.x - 10, this.y - 10, 20, 20);
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
                 ctx.shadowBlur = 0;
@@ -58,22 +59,12 @@ export function startQuantumUniverse() {
         }
     }
 
-    function init() {
-        for (let i = 0; i < 80; i++) particles.push(new QuantumObject());
-    }
-
+    function init() { for (let i = 0; i < 80; i++) particles.push(new QuantumObject()); }
     function animate() {
-        // Slight trail to represent the "memory" of reality
         ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
+        particles.forEach(p => { p.update(); p.draw(); });
         requestAnimationFrame(animate);
     }
-
-    init();
-    animate();
+    init(); animate();
 }

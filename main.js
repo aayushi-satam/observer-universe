@@ -38,3 +38,12 @@ document.addEventListener('mousemove', (e) => {
 universeBtn.addEventListener('click', () => {
     cursor.style.display = 'block';
 });
+
+// Pulse interaction logic
+document.addEventListener('mousedown', () => {
+    cursor.classList.add('cursor-pulse');
+});
+
+document.addEventListener('mouseup', () => {
+    cursor.classList.remove('cursor-pulse');
+});
