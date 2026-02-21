@@ -104,3 +104,30 @@ body { cursor: none; }
     70% { transform: translate(9%, 4%); }
     90% { transform: translate(-1%, 7%); }
 }
+
+/* Entry Overlay */
+#enter-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20000;
+    cursor: pointer;
+    transition: opacity 1.5s ease;
+}
+#enter-overlay h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    letter-spacing: 15px;
+    margin: 0;
+}
+#enter-overlay p {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}

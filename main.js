@@ -31,3 +31,10 @@ function render() {
     requestAnimationFrame(render);
 }
 render();
+
+// 7. Entry Interaction
+const overlay = document.getElementById('enter-overlay');
+overlay.addEventListener('click', () => {
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.style.display = 'none', 1500);
+});
