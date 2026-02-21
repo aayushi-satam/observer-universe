@@ -59,3 +59,25 @@ body { cursor: none; }
     transition: transform 0.1s ease-out;
     mix-blend-mode: difference;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .vogue-title {
+        font-size: 4rem;
+        letter-spacing: -1px;
+    }
+    .body-text {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        margin-top: 1.5rem;
+    }
+    .module {
+        padding: 0 5%;
+    }
+    #custom-cursor {
+        display: none; /* Hide custom cursor on touch devices */
+    }
+    body {
+        cursor: auto;
+    }
+}
