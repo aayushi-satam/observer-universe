@@ -7,21 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="enter-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:white; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:100; cursor:pointer;">
+    <div id="enter-overlay">
         <h1>OBSERVER UNIVERSE</h1>
         <p>CLICK TO INITIATE OBSERVATION</p>
     </div>
 
-    <div id="content-wrapper" style="display:none; padding: 50px; font-family: sans-serif; max-width: 800px; margin: auto;">
-        <h2>SCIENCE</h2><p>Inspired by quantum mechanics. Particles behave differently when observed.</p>
-        <h2>ART</h2><p>An interactive artwork where elements react to your presence.</p>
-        <h2>PHILOSOPHY</h2><p>Does something exist if it is not seen? Your interaction shapes reality.</p>
-        <h2>TECHNOLOGY</h2><p>Uses generative code to make objects and sounds respond to attention.</p>
-        <h2>SPIRITUALITY</h2><p>Reflects awareness. Your attention creates the universe around you.</p>
-        <hr>
-        <h3>THE VOID</h3>
-        <p>Instructions: Your cursor is the observer. Movement creates life and sound.</p>
-        <button id="activate-universe" style="padding: 20px; cursor: pointer;">ENTER THE VOID</button>
+    <div id="content-wrapper" style="display:none; padding:40px; max-width:800px; margin:auto; font-family:sans-serif;">
+        <section>
+            <h2>SCIENCE</h2>
+            <p>The project is inspired by quantum mechanics. Particles behave differently when observed. Here, objects follow similar rules. When you look at them, they appear or change.</p>
+            
+            <h2>ART</h2>
+            <p>The visuals, typography, and motion are carefully designed. The environment is an interactive artwork where every element is part of the composition and reacts to your presence.</p>
+            
+            <h2>PHILOSOPHY</h2>
+            <p>The experience raises questions about reality. Does something exist if it is not seen? Your interaction shapes what is real in this universe.</p>
+            
+            <h2>TECHNOLOGY</h2>
+            <p>The system uses generative code to make objects, sounds, and text respond to your attention. Each session is unique. You create your own version of this universe by interacting.</p>
+            
+            <h2>SPIRITUALITY</h2>
+            <p>The artwork reflects impermanence and awareness. Observing the environment is an act of participation. Your attention creates the universe around you.</p>
+        </section>
+
+        <section style="margin-top:40px; border-top:1px solid #ccc; padding-top:20px;">
+            <h2>REFLECTION QUESTIONS</h2>
+            <ul>
+                <li>What exists when you are not looking?</li>
+                <li>How does attention shape reality?</li>
+                <li>Can you notice impermanence in the world around you?</li>
+            </ul>
+        </section>
+
+        <section style="margin-top:40px;">
+            <h2>THE VOID</h2>
+            <p><strong>Instructions:</strong> Your cursor represents the act of observation. Movement creates light, connection, and sound. In silence and stillness, the universe recedes.</p>
+            <button id="activate-universe" style="margin-top:20px; padding:15px 30px; cursor:pointer;">ENTER THE VOID</button>
+        </section>
     </div>
 
     <div id="interaction-space" style="display:none;">
