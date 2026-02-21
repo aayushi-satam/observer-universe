@@ -6,17 +6,17 @@
 
 ## Concept
 
-Observer Universe is an interactive digital editorial exploring the idea that observation shapes reality.
+Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
 
-Inspired by principles from quantum mechanics and high-end fashion aesthetics, the system behaves probabilistically. Visual elements exist in unstable, faded states until approached. Proximity increases definition and radiance. Distance returns them to uncertainty.
+Inspired by principles from quantum mechanics, the system behaves probabilistically. Visual elements exist in unstable states until approached. Proximity increases definition. Distance returns them to uncertainty.
 
 The work sits at the intersection of:
 
-Minimalist Design
-Quantum Philosophy
-Interactive Art
-Generative Technology
-Ambient Experience
+Science
+Philosophy
+Art
+Technology
+Spirituality
 
 ---
 
@@ -29,14 +29,12 @@ The experience unfolds in three stages:
 
 Inside the environment:
 
-• **Cursor Proximity:** Stabilizes and scales floating geometries.
-• **Focus Glow:** Objects radiate light only when under the lens of the observer.
-• **Energy Bursts:** Clicks trigger radial dispersion of matter.
-• **Kinetic Typography:** Headlines tilt and track based on mouse perspective.
-• **Reactive Sound:** DeeperMeaning.mp3 responds to interaction intensity.
-• **Film Texture:** A continuous grainy overlay provides a tactile, vintage quality.
-
-Every session differs based on movement, timing, and focus.
+• **Cursor Proximity:** Stabilizes and scales floating geometries
+• **Focus Glow:** Objects radiate light when under the lens of the observer
+• **Kinetic Typography:** Headlines tilt and track based on mouse perspective
+• **Reactive Sound:** DeeperMeaning.mp3 responds to interaction intensity
+• **Film Texture:** A vintage grainy overlay provides tactile quality
+• **Energy Bursts:** Clicks generate radial dispersion of matter
 
 ---
 
@@ -44,27 +42,27 @@ Every session differs based on movement, timing, and focus.
 
 The universe includes:
 
-• **Vogue-Inspired Layout:** High-contrast typography and minimalist grid.
-• **Reactive Particle Systems:** Built using the HTML5 Canvas API.
-• **Bloom-Style Glow:** Dynamic shadows that simulate radiant light.
-• **Audio Engine:** Integration of ambient soundscapes with volume swells.
-• **Custom Cursor:** A minimalist 'lens' that acts as the observer’s eye.
-• **Perspective Mapping:** 3D-depth simulation through CSS transforms.
+• Multi-layered geometric structures
+• Reactive particle systems (Canvas API)
+• Bloom-style glow and depth simulation
+• Ambient + reactive Web Audio engine
+• Custom interactive 'Lens' cursor
+• High-contrast 'Vogue' inspired editorial layout
 
-All visuals and sound behavior are processed in real time.
+All visuals and sound are generated in real time.
 
 ---
 
 ## Technical Stack
 
-HTML5
-CSS3 (Custom Properties + SVG Filters)
+HTML
+CSS
 JavaScript (Canvas API + Web Audio API)
 
-No external libraries or frameworks.
+No external frameworks.
 
 ---
 
 ## Goal
 
-To create a responsive system where attention acts as an active force, allowing the user to experience interaction as structural influence rather than passive viewing.
+To create a responsive system where attention acts as an active force, allowing users to experience interaction as structural influence rather than passive viewing.
