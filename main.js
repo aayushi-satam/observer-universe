@@ -53,3 +53,8 @@ render();
 // 4. Typography Interaction
 import { handleTypography } from './scripts/typography.js';
 handleTypography();
+
+// 5. Big Bang Interaction
+window.addEventListener('mousedown', (e) => {
+    objects.forEach(obj => obj.explode(e.clientX, e.clientY));
+});
