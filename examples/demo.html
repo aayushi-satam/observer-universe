@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo — Observer Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/typography.css">
+  <style>
+    .demo-panel {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.75rem;
+      z-index: 200;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(200,169,110,0.2);
+      padding: 0.75rem 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+    .demo-btn {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid rgba(200,169,110,0.3);
+      color: var(--color-ink-dim);
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .demo-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .demo-info {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-ink-dim);
+      text-align: center;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body class="section-objective" data-section="demo">
+
+  <canvas id="bg-canvas"></canvas>
+  <div id="cursor-glow"></div>
+  <div id="particles-container"></div>
+
+  <!-- Demo controls -->
+  <div class="demo-panel">
+    <button class="demo-btn" onclick="demoSpawnObjects()">Spawn Objects</button>
+    <button class="demo-btn" onclick="demoQuantumCollapse()">Quantum Collapse</button>
+    <button class="demo-btn" onclick="demoGlitch()">Glitch Type</button>
+    <button class="demo-btn" onclick="demoSound()">Test Sound</button>
+    <button class="demo-btn" onclick="location.href='../index.html'">← Main Site</button>
+  </div>
+
+  <main class="section-content">
+    <div class="eyebrow-text observe-trigger" data-delay="0">DEMO / TESTING</div>
+
+    <h1 class="headline-main observe-trigger" data-delay="200">
+      <span class="line-mask"><span class="line-inner">OBSERVER</span></span>
+      <span class="line-mask"><em><span class="line-inner">UNIVERSE</span></em></span>
+      <span class="line-mask"><span class="line-inner">DEMO</span></span>
+    </h1>
+
+    <div class="section-label observe-trigger" data-delay="500">— TESTING ENVIRONMENT —</div>
+
+    <p class="body-text observe-trigger" data-delay="700">
+      Move your cursor around the screen to observe quantum objects appearing. Click anywhere to trigger a quantum collapse. Use the controls above to test individual features.
+    </p>
+
+    <div class="cta-row observe-trigger" data-delay="1000">
+      <a href="../index.html" class="cta-btn">ENTER THE UNIVERSE →</a>
+    </div>
+  </main>
+
+  <div id="objects-layer">
+    <div class="float-obj obj-circle" style="top:20%;left:7%;" data-quantum="1"></div>
+    <div class="float-obj obj-ring" style="top:30%;right:8%;" data-quantum="1"></div>
+    <div class="float-obj obj-triangle" style="bottom:25%;left:10%;" data-quantum="1"></div>
+    <div class="float-obj obj-line-v" style="top:15%;right:15%;" data-quantum="1"></div>
+    <div class="float-obj obj-dot-cluster" style="bottom:30%;right:6%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree obj-tree--tall" style="bottom:0;left:5%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree" style="bottom:0;right:6%;" data-quantum="1"></div>
+  </div>
+
+  <div class="demo-info">Move cursor · Click to collapse · Arrow keys to navigate</div>
+
+  <footer class="section-footer">
+    <span class="footer-index">DEMO</span>
+    <span class="footer-title">OBSERVER UNIVERSE</span>
+    <span class="footer-next"><a href="../index.html">ENTER ›</a></span>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/objects.js"></script>
+  <script src="../scripts/typography.js"></script>
+  <script src="../scripts/sound.js"></script>
+  <script>
+    initObserverUniverse({ section: 'demo', index: 0 });
+
+    function demoSpawnObjects() {
+      const layer = document.getElementById('objects-layer');
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const obj = ObjectSpawner.spawn(layer);
+          obj.style.top = (10 + Math.random() * 80) + '%';
+          obj.style.left = (10 + Math.random() * 80) + '%';
+          setTimeout(() => obj.classList.add('observed'), 100);
+          setTimeout(() => { obj.classList.remove('observed'); setTimeout(() => obj.remove(), 900); }, 3000);
+        }, i * 200);
+      }
+    }
+
+    function demoQuantumCollapse() {
+      document.querySelectorAll('[data-quantum]').forEach(obj => {
+        obj.classList.remove('observed');
+        setTimeout(() => {
+          if (Math.random() > 0.4) obj.classList.add('observed');
+        }, 300 + Math.random() * 700);
+      });
+    }
+
+    function demoGlitch() {
+      document.querySelectorAll('.headline-main .line-inner').forEach(el => {
+        el.classList.add('glitching');
+        setTimeout(() => el.classList.remove('glitching'), 500);
+      });
+    }
+
+    function demoSound() {
+      const btn = document.getElementById('sound-toggle');
+      if (!ObserverUniverse.settings.soundEnabled) {
+        ObserverUniverse.settings.soundEnabled = true;
+        btn.classList.add('active');
+        startAmbient();
+      } else {
+        SoundEngine.ping(440, 0.1);
+      }
+    }
+  </script>
+</body>
+</html>
