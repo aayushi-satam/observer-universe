@@ -5,45 +5,49 @@ https://aayushi-satam.github.io/observer-universe/
 
 ---
 
-## Overview
+## Concept
 
-Observer Universe is an interactive web project exploring the idea that observation influences reality.
+Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
 
-The system is inspired by quantum mechanics, where particles behave differently when measured. In this environment, visual elements exist in unstable states until interaction stabilizes them. When attention is sustained, structures become defined. When ignored, they dissolve.
+Inspired by principles from quantum mechanics, the system behaves probabilistically. Objects exist in unstable states until measured. When attention stabilizes them, they collapse into form. When ignored, they dissolve.
 
-The project connects science, philosophy, art, technology, and spirituality within a single responsive system.
+The work sits at the intersection of:
+
+Science  
+Philosophy  
+Art  
+Technology  
+Spirituality  
 
 ---
 
-## Experience Structure
+## Experience
 
-1. Concept introduction  
-2. User instructions  
-3. Interactive environment  
+The project begins with a conceptual introduction, followed by instructions for interaction, and then transitions into a responsive environment.
 
-In the interactive phase:
+Inside the interactive space:
 
-• Continuous movement increases instability  
-• Sustained stillness stabilizes nearby elements  
+• Movement introduces instability  
+• Sustained stillness triggers state collapse  
 • Stabilized structures accumulate  
-• Excess motion returns the system to uncertainty  
+• Continued motion returns elements to uncertainty  
 
-Each session develops differently based on user behavior.
+Each session develops differently depending on user behavior.
 
 ---
 
-## Technical Notes
+## Technical Structure
 
 Built using:
 
 HTML  
 CSS  
-JavaScript (Canvas API)  
+JavaScript (Canvas API)
 
-No external frameworks.
+The system uses generative logic and real-time interaction to simulate probabilistic behavior.
 
 ---
 
-## Project Goal
+## Goal
 
-To create a web-based environment where users experience how attention alters structure and behavior within a system.
+To create a web-based system where attention directly influences visual and structural outcomes, allowing users to experience observation as an active force.
