@@ -5,14 +5,29 @@
 <title>Quantum Jungle</title>
 <link rel="stylesheet" href="./style/main.css">
 <style>
-body { margin:0; overflow:hidden; background:#050505; }
+body { margin:0; overflow:hidden; background:#050505; cursor:none; }
 canvas { display:block; }
+.back-btn{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+  padding:10px 18px;
+  background:white;
+  border:none;
+  cursor:pointer;
+}
 </style>
 </head>
 <body>
 
+<button class="back-btn" onclick="window.location.href='./index.html'">Back</button>
+
+<div id="cursor" class="cursor"></div>
+
 <canvas id="universe"></canvas>
 
 <script src="./scripts/universe.js"></script>
+
 </body>
 </html>
