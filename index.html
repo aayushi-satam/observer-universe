@@ -5,37 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Observer Universe</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div id="enter-overlay">
-        <h1 style="letter-spacing: 10px;">OBSERVER</h1>
-        <p>CLICK TO ENTER</p>
+        <h1>OBSERVER UNIVERSE</h1>
+        <p>CLICK TO READ THE PHILOSOPHY</p>
     </div>
 
     <div id="content-wrapper" style="display:none;">
         <main>
+            <section class="module"><h2>SCIENCE</h2><p>Probability over certainty.</p></section>
+            <section class="module"><h2>PHILOSOPHY</h2><p>The tree in the forest.</p></section>
+            <section class="module"><h2>ART</h2><p>Perception as creation.</p></section>
+            <section class="module"><h2>TECHNOLOGY</h2><p>Systems that react.</p></section>
+            <section class="module"><h2>SPIRITUALITY</h2><p>Oneness with the observed.</p></section>
+            <section class="module"><h2>REFLECTION</h2><p>Your gaze is an active force.</p></section>
             <section class="module">
-                <h2>THE CONCEPT</h2>
-                <p>If a tree falls in a forest and no one is around to hear it, does it make a sound?</p>
-            </section>
-            
-            <section class="module">
-                <h2>REFLECTION</h2>
-                <p>In the quantum world, objects exist differently when they are not being observed.</p>
-            </section>
-
-            <section class="module universe-transition">
-                <h2>ARE YOU READY TO OBSERVE?</h2>
-                <button id="activate-universe">ENTER THE QUANTUM VOID</button>
+                <h2>ARE YOU READY TO ENTER THE UNIVERSE?</h2>
+                <button id="activate-universe">ENTER THE VOID</button>
             </section>
         </main>
     </div>
 
     <div id="interaction-space" style="display:none;">
         <canvas id="quantum-canvas"></canvas>
-        <div class="hud">OBSERVATION ACTIVE</div>
     </div>
 
     <script type="module" src="main.js"></script>
