@@ -11,59 +11,70 @@ export function startQuantumUniverse() {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.baseSize = Math.random() * 8 + 2;
-            this.size = this.baseSize;
+            this.size = Math.random() * 3 + 1;
             this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.velocity = { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 };
+            this.velocity = { x: (Math.random() - 0.5) * 1.5, y: (Math.random() - 0.5) * 1.5 };
+        }
+
+        update(mouse) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+
+            // The Observer Effect: Particles gravitate and brighten near cursor
+            if (dist < 200) {
+                this.x += dx * 0.01;
+                this.y += dy * 0.01;
+                this.size = 6;
+            } else {
+                this.size = 2;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+            }
+
+            // Screen wrap
+            if (this.x > canvas.width) this.x = 0;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.y > canvas.height) this.y = 0;
+            if (this.y < 0) this.y = canvas.height;
         }
 
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fillStyle = this.color;
-            ctx.shadowBlur = this.size * 2;
+            ctx.shadowBlur = 10;
             ctx.shadowColor = this.color;
             ctx.fill();
         }
-
-        update(mouse) {
-            const dx = mouse.x - this.x;
-            const dy = mouse.y - this.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 150) {
-                // Reaction: Grow and shift color when observed
-                this.size = Math.min(this.size + 2, 40);
-                this.x -= dx * 0.02;
-                this.y -= dy * 0.02;
-            } else {
-                // Return to uncertainty when not observed
-                if (this.size > this.baseSize) this.size -= 0.5;
-                this.x += this.velocity.x;
-                this.y += this.velocity.y;
-            }
-
-            // Boundary check
-            if (this.x < 0 || this.x > canvas.width) this.velocity.x *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.velocity.y *= -1;
-
-            this.draw();
-        }
     }
 
-    for (let i = 0; i < 100; i++) particles.push(new Particle());
+    for (let i = 0; i < 150; i++) particles.push(new Particle());
 
-    const mouse = { x: -100, y: -100 };
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
+    let mouse = { x: null, y: null };
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
     function animate() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Trail effect
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => p.update(mouse));
-        requestAnimationFrame(animate);
-    }
-    animate();
+        ctx.fillStyle = 'rgba(0,
+cat <<EOF >> style.css
+#interaction-space {
+    cursor: crosshair;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; filter: brightness(2); }
+    to { opacity: 1; filter: brightness(1); }
+}
+
+.hud {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.5;
 }
