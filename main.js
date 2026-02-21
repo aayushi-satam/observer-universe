@@ -47,3 +47,20 @@ window.addEventListener('click', () => {
     // This will be the trigger for the Web Audio and "Big Bang"
     document.body.style.backgroundColor = "#fafafa"; // Subtle shift on click
 });
+import { objects } from './scripts/objects.js';
+
+let mouse = { x: 0, y: 0 };
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    objects.forEach(obj => {
+        obj.update(mouse.x, mouse.y);
+        obj.draw();
+    });
+    requestAnimationFrame(render);
+}
+render();
