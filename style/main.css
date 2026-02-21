@@ -1,3 +1,4 @@
+/* Global styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,28 +10,31 @@ body, html {
   overflow: hidden;
 }
 
+/* Each section/module */
 .module {
-  width: 90vw;             /* reduce width so it doesn’t touch edges */
-  max-width: 1200px;       /* optional: limit maximum width on big screens */
+  width: 90vw !important;           /* content width */
+  max-width: 1200px !important;     /* limit very wide screens */
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0 auto;          /* center horizontally */
-  padding: 2rem;           /* add breathing space around content */
-  box-sizing: border-box;  /* ensures padding is included in width */
+  margin: 0 auto !important;        /* center horizontally */
+  padding: 2rem !important;         /* breathing space */
+  box-sizing: border-box !important;
 }
 
+/* Headlines */
 .headline {
   font-size: 5vw;
   font-weight: bold;
-  margin-bottom: 1rem;     /* spacing below headline */
+  margin-bottom: 1rem;
 }
 
+/* Body text */
 .body-text {
   font-size: 2vw;
-  max-width: 100%;          /* fits inside module width */
+  max-width: 100%;
   line-height: 1.5;
 }
