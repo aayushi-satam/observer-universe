@@ -1,85 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Observer Universe</title>
-
 <link rel="stylesheet" href="./style/main.css">
+<style>
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:"Times New Roman", serif;
+  overflow-x:hidden;
+  cursor:none;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+.section{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
+}
+
+h1{
+  font-size:72px;
+  font-weight:900;
+  letter-spacing:3px;
+  margin-bottom:30px;
+}
+
+p{
+  font-size:22px;
+  max-width:800px;
+  line-height:1.6;
+  opacity:0.8;
+}
+
+#scroll-arrow{
+  position:absolute;
+  bottom:40px;
+  font-size:40px;
+  animation: bounce 1.5s infinite;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(15px);}
+}
+
+button{
+  margin-top:40px;
+  padding:16px 40px;
+  font-size:18px;
+  background:white;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ddd;
+}
+</style>
 </head>
-
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="scroll-indicator">↓</div>
-
-<audio id="ambient" loop>
-<source src="./assets/audio/ambient.mp3" type="audio/mp3">
-</audio>
-
 <div class="section">
-<h1>OBJECTIVE</h1>
-<p>
-To let you experience a world where reality depends on observation.
-The objects, sounds, and text in this universe exist, change, or disappear based on your attention.
-</p>
+  <h1>OBSERVER</h1>
+  <p>
+  Observation shapes reality.  
+  Move closer. Influence structure.  
+  Attention is force.
+  </p>
+
+  <div id="scroll-arrow">↓</div>
 </div>
 
 <div class="section">
-<h1>SCIENCE</h1>
-<p>
-The project is inspired by quantum mechanics. Particles behave differently when observed.
-Here, objects follow similar rules. When you look at them, they appear or change.
-</p>
-</div>
-
-<div class="section">
-<h1>ART</h1>
-<p>
-The visuals, typography, and motion are carefully designed.
-The environment is an interactive artwork where every element reacts to your presence.
-</p>
-</div>
-
-<div class="section">
-<h1>PHILOSOPHY</h1>
-<p>
-Does something exist if it is not seen?
-Your interaction shapes what is real in this universe.
-</p>
-</div>
-
-<div class="section">
-<h1>TECHNOLOGY</h1>
-<p>
-Generative code makes objects, sounds, and text respond to your attention.
-Each session is unique.
-</p>
-</div>
-
-<div class="section">
-<h1>SPIRITUALITY</h1>
-<p>
-Observing the environment is participation.
-Your attention creates the universe around you.
-</p>
-</div>
-
-<div class="section">
-<h1>HOW TO EXPERIENCE</h1>
-<p>
-Move slowly.<br>
-Pause.<br>
-When you hold still, reality stabilizes.<br>
-Move again, and it dissolves.
-</p>
-
-<button id="begin">ARE YOU READY?</button>
+  <button id="begin">Are You Ready</button>
 </div>
 
 <script src="./scripts/main.js"></script>
+
+<script>
+window.addEventListener("scroll", () => {
+  const arrow = document.getElementById("scroll-arrow");
+  const buttonSection = document.querySelectorAll(".section")[1];
+  const rect = buttonSection.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight/2) {
+    arrow.style.opacity = 0;
+  } else {
+    arrow.style.opacity = 1;
+  }
+});
+</script>
+
 </body>
 </html>
-
