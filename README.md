@@ -5,68 +5,45 @@ https://aayushi-satam.github.io/observer-universe/
 
 ---
 
-## Concept
+## Overview
 
-Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
+Observer Universe is an interactive web project exploring the idea that observation influences reality.
 
-Inspired by principles from quantum mechanics, the system behaves probabilistically. Objects exist in unstable states until measured. When attention stabilizes them, they collapse into form. When ignored, they dissolve.
+The system is inspired by quantum mechanics, where particles behave differently when measured. In this environment, visual elements exist in unstable states until interaction stabilizes them. When attention is sustained, structures become defined. When ignored, they dissolve.
 
-The work sits at the intersection of:
-
-Science  
-Philosophy  
-Art  
-Technology  
-Spirituality  
+The project connects science, philosophy, art, technology, and spirituality within a single responsive system.
 
 ---
 
-## How It Works
+## Experience Structure
 
-The experience unfolds in phases:
+1. Concept introduction  
+2. User instructions  
+3. Interactive environment  
 
-1. Conceptual introduction (OBJECTIVE → SCIENCE → ART → PHILOSOPHY → TECHNOLOGY → SPIRITUALITY)
-2. Instruction phase
-3. Interactive universe
+In the interactive phase:
 
-Inside the universe:
+• Continuous movement increases instability  
+• Sustained stillness stabilizes nearby elements  
+• Stabilized structures accumulate  
+• Excess motion returns the system to uncertainty  
 
-• Movement creates instability  
-• Stillness triggers collapse  
-• Structures accumulate through interaction  
-• Excess motion causes decoherence  
-
-The system responds to cursor behavior, simulating probabilistic state change.
-
-Each session evolves differently.
+Each session develops differently based on user behavior.
 
 ---
 
-## Core Idea
+## Technical Notes
 
-Speed introduces noise.  
-Stillness produces form.  
-
-Observation is participation.
-
----
-
-## Built With
+Built using:
 
 HTML  
 CSS  
 JavaScript (Canvas API)  
 
-No frameworks.  
-No external libraries.  
-Pure generative logic.
+No external frameworks.
 
 ---
 
 ## Project Goal
 
-To create an immersive environment where users feel that their attention directly influences the structure of reality.
-
-The universe does not simply animate.
-
-It responds.
+To create a web-based environment where users experience how attention alters structure and behavior within a system.
