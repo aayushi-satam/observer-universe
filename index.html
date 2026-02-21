@@ -1,94 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Observer Universe</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer Universe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="universe-canvas"></canvas>
-
-  <div id="entry-screen">
-    <div class="entry-label">OBSERVER UNIVERSE</div>
-    <div class="entry-hint">move your cursor to begin</div>
-  </div>
-
-  <main id="scroll-container">
-    <section class="section" id="section-objective" data-index="0">
-      <div class="section-inner">
-        <div class="section-tag">00 — OBJECTIVE</div>
-        <h1 class="headline">Reality<br/><em>depends on<br/>observation.</em></h1>
-        <p class="body-text">To let you experience a world where reality depends on observation. The objects, sounds, and text in this universe exist, change, or disappear based on your attention.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-science" data-index="1">
-      <div class="section-inner">
-        <div class="section-tag">01 — SCIENCE</div>
-        <h2 class="headline">Particles<br/><em>behave<br/>differently.</em></h2>
-        <p class="body-text">The project is inspired by quantum mechanics. Particles behave differently when observed. Here, objects follow similar rules. When you look at them, they appear or change.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-art" data-index="2">
-      <div class="section-inner">
-        <div class="section-tag">02 — ART</div>
-        <h2 class="headline">Every<br/><em>element<br/>reacts.</em></h2>
-        <p class="body-text">The visuals, typography, and motion are carefully designed. The environment is an interactive artwork where every element is part of the composition and reacts to your presence.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-philosophy" data-index="3">
-      <div class="section-inner">
-        <div class="section-tag">03 — PHILOSOPHY</div>
-        <h2 class="headline">Does it<br/><em>exist if<br/>unseen?</em></h2>
-        <p class="body-text">The experience raises questions about reality. Does something exist if it is not seen? Your interaction shapes what is real in this universe.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-technology" data-index="4">
-      <div class="section-inner">
-        <div class="section-tag">04 — TECHNOLOGY</div>
-        <h2 class="headline">Each<br/><em>session<br/>is unique.</em></h2>
-        <p class="body-text">The system uses generative code to make objects, sounds, and text respond to your attention. Each session is unique. You create your own version of this universe by interacting.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-spirituality" data-index="5">
-      <div class="section-inner">
-        <div class="section-tag">05 — SPIRITUALITY</div>
-        <h2 class="headline">Attention<br/><em>creates<br/>the universe.</em></h2>
-        <p class="body-text">The artwork reflects impermanence and awareness. Observing the environment is an act of participation. Your attention creates the universe around you.</p>
-      </div>
-    </section>
-
-    <section class="section" id="section-reflection" data-index="6">
-      <div class="section-inner">
-        <div class="section-tag">06 — REFLECTION</div>
-        <h2 class="headline"><em>Questions<br/>without<br/>answers.</em></h2>
-        <ul class="reflection-list">
-          <li>What exists when you are not looking?</li>
-          <li>How does attention shape reality?</li>
-          <li>Can you notice impermanence in the world around you?</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <div id="scroll-indicator">
-    <span>scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-
-  <div id="cursor-glow"></div>
-
-  <script src="scripts/sound.js"></script>
-  <script src="scripts/objects.js"></script>
-  <script src="scripts/typography.js"></script>
-  <script src="scripts/main.js"></script>
+    <div id="ui-layer">
+        <div id="stage-1" class="stage active">
+            <h1>SINGULARITY</h1>
+            <p>Observation shapes reality.</p>
+            <button onclick="startUniverse()">INITIATE</button>
+        </div>
+        <div id="stage-2" class="stage">
+            <h1>INFLATION...</h1>
+        </div>
+    </div>
+    
+    <canvas id="universe"></canvas>
+    <script src="main.js"></script>
 </body>
 </html>
