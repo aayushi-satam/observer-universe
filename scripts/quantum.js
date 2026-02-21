@@ -21,10 +21,9 @@ export function startQuantumUniverse() {
             const dy = mouse.y - this.y;
             const dist = Math.sqrt(dx*dx + dy*dy);
 
-            // The Observer Effect: Particles gravitate and brighten near cursor
             if (dist < 200) {
-                this.x += dx * 0.01;
-                this.y += dy * 0.01;
+                this.x += dx * 0.02; // React to observer
+                this.y += dy * 0.02;
                 this.size = 6;
             } else {
                 this.size = 2;
@@ -32,7 +31,6 @@ export function startQuantumUniverse() {
                 this.y += this.velocity.y;
             }
 
-            // Screen wrap
             if (this.x > canvas.width) this.x = 0;
             if (this.x < 0) this.x = canvas.width;
             if (this.y > canvas.height) this.y = 0;
@@ -43,7 +41,7 @@ export function startQuantumUniverse() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fillStyle = this.color;
-            ctx.shadowBlur = 10;
+            ctx.shadowBlur = 15;
             ctx.shadowColor = this.color;
             ctx.fill();
         }
@@ -55,26 +53,10 @@ export function startQuantumUniverse() {
     window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
     function animate() {
-        ctx.fillStyle = 'rgba(0,
-cat <<EOF >> style.css
-#interaction-space {
-    cursor: crosshair;
-    animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; filter: brightness(2); }
-    to { opacity: 1; filter: brightness(1); }
-}
-
-.hud {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: #fff;
-    font-family: 'Montserrat';
-    font-size: 0.7rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: 0.5;
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(mouse); p.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
 }
