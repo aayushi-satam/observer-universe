@@ -5,65 +5,68 @@ export function startQuantumUniverse() {
     canvas.height = window.innerHeight;
 
     let particles = [];
-    const mouse = { x: null, y: null };
+    const mouse = { x: -100, y: -100 };
 
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
     });
 
-    class Particle {
+    class QuantumObject {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
-        }
-
-        draw() {
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
+            this.baseSize = Math.random() * 15 + 5;
+            this.angle = Math.random() * Math.PI * 2;
+            this.isObserved = false;
         }
 
         update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
-
-            // Connect to mouse (The Observation Effect)
             const dx = mouse.x - this.x;
             const dy = mouse.y - this.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
+            // The Collapse: Objects within 150px "exist" solidly
             if (distance < 150) {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/150})`;
-                ctx.lineWidth = 0.5;
-                ctx.moveTo(this.x, this.y);
-                ctx.lineTo(mouse.x, mouse.y);
-                ctx.stroke();
-                this.size = 3; // Particle "reacts" by growing
+                this.isObserved = true;
+                this.x += dx * 0.01; // Tension: Object is drawn to the observer
+                this.y += dy * 0.01;
             } else {
-                this.size = Math.random() * 2;
+                this.isObserved = false;
+                this.x += Math.sin(this.angle) * 0.5; // Drift when unobserved
+                this.y += Math.cos(this.angle) * 0.5;
+                this.angle += 0.01;
             }
+        }
+
+        draw() {
+            ctx.beginPath();
+            if (this.isObserved) {
+                // Particle State: Solid, bright, defined
+                ctx.arc(this.x, this.y, this.baseSize, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#fff';
+            } else {
+                // Wave State: Blurred, dim, uncertain
+                ctx.rect(this.x - 10, this.y - 10, 20, 20);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.shadowBlur = 0;
+            }
+            ctx.fill();
+            ctx.closePath();
         }
     }
 
     function init() {
-        for (let i = 0; i < 200; i++) {
-            particles.push(new Particle());
-        }
+        for (let i = 0; i < 80; i++) particles.push(new QuantumObject());
     }
 
     function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Slight trail to represent the "memory" of reality
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
         particles.forEach(p => {
             p.update();
             p.draw();
