@@ -1,20 +1,72 @@
 # Observer Universe
 
-**[→ Experience it here](https://aayushi-satam.github.io/observer-universe/)**
+**→ Experience it here**
+https://aayushi-satam.github.io/observer-universe/
 
 ---
 
-An interactive web experience where reality depends on your attention.
+## Concept
 
-Inspired by quantum mechanics where particles behave differently when observed. Every object, sound, and word in this universe exists, changes, or disappears based on where you look. Move your cursor. Watch the world respond.
+Observer Universe is an interactive web experience exploring the idea that observation shapes reality.
 
-The project sits at the intersection of science, philosophy, art, technology, and spirituality. Each section invites you into a different lens on the same question:
+Inspired by principles from quantum mechanics, the system behaves probabilistically. Objects exist in unstable states until measured. When attention stabilizes them, they collapse into form. When ignored, they dissolve.
 
-*Does something exist if it is not seen?*
+The work sits at the intersection of:
 
-Typography dominates the screen. Objects drift in and out of existence. A generative soundscape breathes around you. And every visit is unique. You author your own version of this universe simply by being present in it.
+Science  
+Philosophy  
+Art  
+Technology  
+Spirituality  
 
 ---
 
-*Built with HTML, CSS, and JavaScript. No frameworks. No libraries. Just attention.*
+## How It Works
 
+The experience unfolds in phases:
+
+1. Conceptual introduction (OBJECTIVE → SCIENCE → ART → PHILOSOPHY → TECHNOLOGY → SPIRITUALITY)
+2. Instruction phase
+3. Interactive universe
+
+Inside the universe:
+
+• Movement creates instability  
+• Stillness triggers collapse  
+• Structures accumulate through interaction  
+• Excess motion causes decoherence  
+
+The system responds to cursor behavior, simulating probabilistic state change.
+
+Each session evolves differently.
+
+---
+
+## Core Idea
+
+Speed introduces noise.  
+Stillness produces form.  
+
+Observation is participation.
+
+---
+
+## Built With
+
+HTML  
+CSS  
+JavaScript (Canvas API)  
+
+No frameworks.  
+No external libraries.  
+Pure generative logic.
+
+---
+
+## Project Goal
+
+To create an immersive environment where users feel that their attention directly influences the structure of reality.
+
+The universe does not simply animate.
+
+It responds.
