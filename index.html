@@ -1,205 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Observer Universe</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style/intro.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Observer Universe</title>
+
+<link rel="stylesheet" href="./style/main.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<canvas id="starfield"></canvas>
-<div id="cursor-orb"></div>
+<audio id="ambient" loop>
+  <source src="./assets/audio/ambient.mp3" type="audio/mp3">
+</audio>
 
-<!-- PANEL 1 — COVER -->
-<section class="panel" id="panel-cover">
-  <div class="cover-wrap">
-    <p class="eyebrow fade-up" data-d="0">AN INTERACTIVE EXPERIENCE</p>
-    <h1 class="cover-title">
-      <span class="tline fade-up" data-d="150">OBSERVER</span>
-      <span class="tline tline--italic fade-up" data-d="300">UNIVERSE</span>
-    </h1>
-    <div class="cover-rule fade-up" data-d="520"></div>
-    <p class="cover-sub fade-up" data-d="680">
-      A world where reality depends<br>on your attention.
-    </p>
-    <div class="scroll-cue fade-up" data-d="1100">
-      <div class="scroll-cue__dots">
-        <span></span><span></span><span></span>
-      </div>
-      <p>SCROLL TO DISCOVER</p>
-    </div>
-  </div>
-  <div class="ghost-char" aria-hidden="true">O</div>
-</section>
+<div class="section">
+<h1>OBJECTIVE</h1>
+<p>
+To let you experience a world where reality depends on observation.
+The objects, sounds, and text in this universe exist, change, or disappear based on your attention.
+</p>
+</div>
 
-<!-- PANEL 2 — OBJECTIVE -->
-<section class="panel" id="panel-objective">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">OBJECTIVE</p>
-      <h2 class="panel-heading scroll-reveal">
-        What is<br><em>this?</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        To let you experience a world where reality depends on observation. The objects, sounds, and text in this universe exist, change, or disappear based on your attention.
-      </p>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">01</div>
-</section>
+<div class="section">
+<h1>SCIENCE</h1>
+<p>
+The project is inspired by quantum mechanics. Particles behave differently when observed.
+Here, objects follow similar rules. When you look at them, they appear or change.
+</p>
+</div>
 
-<!-- PANEL 3 — SCIENCE -->
-<section class="panel" id="panel-science">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">SCIENCE</p>
-      <h2 class="panel-heading scroll-reveal">
-        The observed<br><em>particle.</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        The project is inspired by quantum mechanics. Particles behave differently when observed. Here, objects follow similar rules. When you look at them, they appear or change.
-      </p>
-      <blockquote class="panel-quote scroll-reveal">
-        "The act of measurement changes what is being measured."
-      </blockquote>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">02</div>
-</section>
+<div class="section">
+<h1>ART</h1>
+<p>
+The visuals, typography, and motion are carefully designed.
+The environment is an interactive artwork where every element reacts to your presence.
+</p>
+</div>
 
-<!-- PANEL 4 — ART -->
-<section class="panel" id="panel-art">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">ART</p>
-      <h2 class="panel-heading scroll-reveal">
-        The living<br><em>canvas.</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        The visuals, typography, and motion are carefully designed. The environment is an interactive artwork where every element is part of the composition and reacts to your presence.
-      </p>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">03</div>
-</section>
+<div class="section">
+<h1>PHILOSOPHY</h1>
+<p>
+Does something exist if it is not seen?
+Your interaction shapes what is real in this universe.
+</p>
+</div>
 
-<!-- PANEL 5 — PHILOSOPHY -->
-<section class="panel" id="panel-philosophy">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">PHILOSOPHY</p>
-      <h2 class="panel-heading scroll-reveal">
-        Does it exist<br><em>if unseen?</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        The experience raises questions about reality. Does something exist if it is not seen? Your interaction shapes what is real in this universe.
-      </p>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">04</div>
-</section>
+<div class="section">
+<h1>TECHNOLOGY</h1>
+<p>
+Generative code makes objects, sounds, and text respond to your attention.
+Each session is unique.
+</p>
+</div>
 
-<!-- PANEL 6 — TECHNOLOGY -->
-<section class="panel" id="panel-technology">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">TECHNOLOGY</p>
-      <h2 class="panel-heading scroll-reveal">
-        Your unique<br><em>universe.</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        The system uses generative code to make objects, sounds, and text respond to your attention. Each session is unique. You create your own version of this universe by interacting.
-      </p>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">05</div>
-</section>
+<div class="section">
+<h1>SPIRITUALITY</h1>
+<p>
+Observing the environment is participation.
+Your attention creates the universe around you.
+</p>
+</div>
 
-<!-- PANEL 7 — SPIRITUALITY -->
-<section class="panel" id="panel-spirituality">
-  <div class="panel-layout">
-    <div class="panel-left">
-      <p class="tag scroll-reveal">SPIRITUALITY</p>
-      <h2 class="panel-heading scroll-reveal">
-        Your attention<br><em>creates.</em>
-      </h2>
-    </div>
-    <div class="panel-right">
-      <p class="panel-body scroll-reveal">
-        The artwork reflects impermanence and awareness. Observing the environment is an act of participation. Your attention creates the universe around you.
-      </p>
-    </div>
-  </div>
-  <div class="panel-num" aria-hidden="true">06</div>
-</section>
+<div class="section">
+<h1>HOW TO EXPERIENCE</h1>
+<p>
+Move slowly.<br>
+Pause.<br>
+When you hold still, reality stabilizes.<br>
+Move again, and it dissolves.
+</p>
 
-<!-- PANEL 8 — HOW TO USE -->
-<section class="panel panel--instructions" id="panel-instructions">
-  <div class="instr-wrap">
-    <p class="tag scroll-reveal">HOW TO USE THE UNIVERSE</p>
-    <h2 class="panel-heading scroll-reveal">
-      What to<br><em>expect.</em>
-    </h2>
-    <div class="instr-grid scroll-reveal">
-      <div class="instr-card">
-        <div class="instr-glyph">◎</div>
-        <p class="instr-name">OBSERVE</p>
-        <p class="instr-desc">Move your cursor. Objects materialise only when you look at them. Stop — watch them dissolve back into uncertainty.</p>
-      </div>
-      <div class="instr-card">
-        <div class="instr-glyph">◈</div>
-        <p class="instr-name">COLLAPSE</p>
-        <p class="instr-desc">Click anywhere to force a quantum collapse. Nearby objects blink into or out of existence. Every click is unrepeatable.</p>
-      </div>
-      <div class="instr-card">
-        <div class="instr-glyph">◇</div>
-        <p class="instr-name">LISTEN</p>
-        <p class="instr-desc">Sound responds to your gaze. Each particle carries a tone. Move slowly — the universe sings differently for each observer.</p>
-      </div>
-      <div class="instr-card">
-        <div class="instr-glyph">○</div>
-        <p class="instr-name">REFLECT</p>
-        <p class="instr-desc">There is no goal. No score. Only presence. Ask yourself — what exists in the dark between your observations?</p>
-      </div>
-    </div>
-  </div>
-</section>
+<button id="begin">ARE YOU READY?</button>
+</div>
 
-<!-- PANEL 9 — READY GATE -->
-<section class="panel panel--ready" id="panel-ready">
-  <div class="ready-wrap">
-    <p class="tag scroll-reveal">THE UNIVERSE AWAITS</p>
-    <h2 class="ready-heading scroll-reveal">
-      Are you ready<br>to <em>observe?</em>
-    </h2>
-    <ul class="ready-questions scroll-reveal">
-      <li>What exists when you are not looking?</li>
-      <li>How does attention shape reality?</li>
-      <li>Can you notice impermanence in the world around you?</li>
-    </ul>
-    <a href="universe.html" class="enter-btn scroll-reveal" id="enter-btn">
-      <span>BEGIN HERE</span>
-      <span class="enter-arrow">→</span>
-    </a>
-    <p class="enter-note scroll-reveal">Use headphones. Sound begins the moment you enter.</p>
-  </div>
-  <div class="ghost-char ghost-char--large" aria-hidden="true">∞</div>
-</section>
-
-<script src="scripts/intro.js"></script>
+<script src="./scripts/main.js"></script>
 </body>
 </html>
