@@ -1,14 +1,21 @@
-let audio;
-export function initAudio() {
-    if (audio) return;
-    audio = new Audio('scripts/DeeperMeaning.mp3');
-    audio.loop = true;
-    audio.volume = 0.4;
-    audio.play().catch(e => console.log("Click to start audio"));
+let audioContext;
+let audioBuffer;
+
+export async function initAudio() {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const response = await fetch('DeeperMeaning.mp3');
+    const arrayBuffer = await response.arrayBuffer();
+    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 }
+
 export function playObservationTone() {
-    if (audio && audio.volume < 0.6) {
-        audio.volume = 0.6;
-        setTimeout(() => { audio.volume = 0.4; }, 1000);
-    }
+    if (!audioContext || !audioBuffer) return;
+    const source = audioContext.createBufferSource();
+    source.buffer = audioBuffer;
+    const gainNode = audioContext.createGain();
+    gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+    source.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    source.loop = true;
+    source.start(0);
 }
