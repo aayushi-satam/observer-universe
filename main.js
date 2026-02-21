@@ -4,22 +4,26 @@ import { startQuantumUniverse } from './scripts/quantum.js';
 const overlay = document.getElementById('enter-overlay');
 const wrapper = document.getElementById('content-wrapper');
 
-// 1. Initial Entry
+// Ensure the site starts at the top
+window.scrollTo(0, 0);
+
 overlay.addEventListener('click', () => {
+    console.log("Splash clicked");
     overlay.style.opacity = '0';
-    wrapper.style.display = 'block'; // Reveal info page
+    wrapper.style.display = 'block'; // Show the content
+    
     setTimeout(() => {
         overlay.style.display = 'none';
         initAudio();
     }, 1000);
-}, { once: true });
+});
 
-// 2. Activate Quantum Void Button
+// Use a direct listener for the button
 document.addEventListener('click', (e) => {
     if (e.target && e.target.id === 'activate-universe') {
-        const space = document.getElementById('interaction-space');
-        space.style.display = 'block';
+        console.log("Entering Void");
+        document.getElementById('content-wrapper').style.display = 'none';
+        document.getElementById('interaction-space').style.display = 'block';
         startQuantumUniverse();
-        console.log("Quantum Void Activated");
     }
 });
