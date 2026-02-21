@@ -1,57 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Observer Universe — The Experience</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jost:wght@100;200;300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style/universe.css">
+<meta charset="UTF-8">
+<title>Quantum Jungle</title>
+<link rel="stylesheet" href="./style/main.css">
+<style>
+body { margin:0; overflow:hidden; background:#050505; }
+canvas { display:block; }
+</style>
 </head>
 <body>
 
-<!-- Full-screen quantum canvas — this IS the experience -->
-<canvas id="universe-canvas"></canvas>
+<canvas id="universe"></canvas>
 
-<!-- Custom cursor -->
-<div id="observer-cursor">
-  <div id="cursor-ring"></div>
-  <div id="cursor-dot"></div>
-  <div id="cursor-label">OBSERVING</div>
-</div>
-
-<!-- HUD — top left -->
-<div id="hud-top">
-  <a href="index.html" id="hud-back">← RETURN</a>
-  <div id="hud-title">OBSERVER UNIVERSE</div>
-</div>
-
-<!-- Sound toggle -->
-<button id="sound-btn" class="hud-btn">
-  <span id="sound-icon">◎</span>
-  <span>SOUND</span>
-</button>
-
-<!-- Observation counter -->
-<div id="obs-counter">
-  <div id="obs-count">0</div>
-  <div id="obs-label">OBSERVATIONS</div>
-</div>
-
-<!-- Floating text — quantum phenomena labels -->
-<div id="floating-words"></div>
-
-<!-- Ready fade-in overlay -->
-<div id="entry-overlay">
-  <div id="entry-content">
-    <p class="entry-tag">THE UNIVERSE</p>
-    <h1 class="entry-heading">Begin<br><em>observing.</em></h1>
-    <p class="entry-instruction">Move your cursor across the void.<br>What you see — exists. What you ignore — does not.</p>
-    <button id="entry-start">I AM READY</button>
-  </div>
-</div>
-
-<script src="scripts/universe.js"></script>
+<script src="./scripts/universe.js"></script>
 </body>
 </html>
