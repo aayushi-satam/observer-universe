@@ -49,3 +49,7 @@ function render() {
     requestAnimationFrame(render);
 }
 render();
+
+// 4. Typography Interaction
+import { handleTypography } from './scripts/typography.js';
+handleTypography();
