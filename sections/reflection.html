@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reflection — Observer Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/typography.css">
+  <style>
+    .reflection-intro {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 7rem);
+      font-weight: 900;
+      line-height: 0.9;
+      color: var(--color-white);
+      margin-bottom: 3rem;
+    }
+    .reflection-intro em {
+      font-style: italic;
+      color: var(--color-accent);
+      display: block;
+    }
+  </style>
+</head>
+<body class="section-reflection" data-section="reflection">
+
+  <canvas id="bg-canvas"></canvas>
+  <div id="cursor-glow"></div>
+  <div id="particles-container"></div>
+
+  <nav class="section-nav">
+    <a href="../index.html" class="nav-dot" data-label="Objective"></a>
+    <a href="science.html" class="nav-dot" data-label="Science"></a>
+    <a href="art.html" class="nav-dot" data-label="Art"></a>
+    <a href="philosophy.html" class="nav-dot" data-label="Philosophy"></a>
+    <a href="technology.html" class="nav-dot" data-label="Technology"></a>
+    <a href="spirituality.html" class="nav-dot" data-label="Spirituality"></a>
+    <a href="reflection.html" class="nav-dot active" data-label="Reflection"></a>
+  </nav>
+
+  <button id="sound-toggle" aria-label="Toggle sound">
+    <span class="sound-icon">◎</span>
+    <span class="sound-label">SOUND</span>
+  </button>
+
+  <main class="section-content">
+
+    <div class="eyebrow-text observe-trigger" data-delay="0">REFLECTION QUESTIONS</div>
+
+    <h1 class="reflection-intro observe-trigger" data-delay="200">
+      NOW<br><em>YOU</em><br>REFLECT
+    </h1>
+
+    <div class="section-label observe-trigger" data-delay="400">— REFLECTION —</div>
+
+    <ul class="reflection-list" id="reflection-list">
+      <li data-delay="600">What exists when you are not looking?</li>
+      <li data-delay="800">How does attention shape reality?</li>
+      <li data-delay="1000">Can you notice impermanence in the world around you?</li>
+    </ul>
+
+    <div class="cta-row observe-trigger" data-delay="1300">
+      <a href="../index.html" class="cta-btn">← BEGIN AGAIN</a>
+      <span class="cta-note">Each session is a new universe.</span>
+    </div>
+
+  </main>
+
+  <div id="objects-layer">
+    <!-- Reflection: sparse, contemplative -->
+    <div class="float-obj obj-ring" style="top:18%;left:5%;" data-quantum="1"></div>
+    <div class="float-obj obj-line-v" style="top:12%;right:12%;" data-quantum="1"></div>
+
+    <div class="float-obj" style="top:45%;right:6%;" data-quantum="1">
+      <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
+        <circle cx="45" cy="45" r="40" stroke="rgba(245,240,234,0.15)" stroke-width="1" stroke-dasharray="3 9"/>
+        <circle cx="45" cy="45" r="2" fill="rgba(245,240,234,0.5)"/>
+      </svg>
+    </div>
+
+    <div class="float-obj obj-dot-cluster" style="bottom:28%;left:6%;" data-quantum="1"></div>
+
+    <div class="float-obj" style="bottom:22%;right:9%;" data-quantum="1">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+        <line x1="25" y1="0" x2="25" y2="50" stroke="rgba(245,240,234,0.2)" stroke-width="1"/>
+        <line x1="0" y1="25" x2="50" y2="25" stroke="rgba(245,240,234,0.2)" stroke-width="1"/>
+        <circle cx="25" cy="25" r="4" stroke="rgba(245,240,234,0.3)" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="float-obj obj-tree obj-tree--tall" style="bottom:0;left:4%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree" style="bottom:0;left:10%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree obj-tree--tall" style="bottom:0;right:4%;" data-quantum="1"></div>
+    <div class="float-obj obj-tree" style="bottom:0;right:11%;" data-quantum="1"></div>
+  </div>
+
+  <footer class="section-footer">
+    <span class="footer-index">07 / 07</span>
+    <span class="footer-title">REFLECTION</span>
+    <span class="footer-next"><a href="../index.html">RESTART ›</a></span>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/objects.js"></script>
+  <script src="../scripts/typography.js"></script>
+  <script src="../scripts/sound.js"></script>
+  <script>
+    initObserverUniverse({ section: 'reflection', index: 7 });
+
+    // Animate reflection questions on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('#reflection-list li');
+      items.forEach(li => {
+        const delay = parseInt(li.dataset.delay) || 600;
+        setTimeout(() => li.classList.add('visible'), delay);
+
+        // Hover: typewriter re-reveal
+        li.addEventListener('mouseenter', () => {
+          li.style.color = 'var(--color-white)';
+          li.style.paddingLeft = '1.5rem';
+        });
+        li.addEventListener('mouseleave', () => {
+          li.style.color = '';
+          li.style.paddingLeft = '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
